@@ -20,3 +20,15 @@ Contents
    align.rst
    peakfit.rst
    lcf.rst
+
+-----------
+
+* Running feff
+
+* paths
+
+* exafs fitting
+
+* exafs plotting
+
+
