@@ -17,7 +17,7 @@ Ravel
 
 .. :mark:`somerights,.`
 
-This document is licensed under `The Creative Commons Attribution-ShareAlike License <http://creativecommons.org/licenses/by-sa/3.0/>`__.
+This document is licensed under `The Creative Commons Attribution-ShareAlike License <http://creativecommons.org/licenses/by-sa/4.0/>`__.
 
 .. linebreak
 
