@@ -6,5 +6,24 @@
 Fitting data with Larch
 =======================
 
-Blah blah
+* import the XES data
+
+* make the Guassia
+
+* replot both, discuss the what and why of a fit
+
+* introduce Larch's fitting model
+
+* create an objective function
+
+* create parameters
+
+* make the fit
+
+* plot results
+
+* discuss results, uncertsainties
+
+* examine the various fit groups
+
 

@@ -6,5 +6,29 @@
 Manipulating and plotting data
 ==============================
 
-Blah blah
+* read Bi XES data, which is a simple peak pretty well fit by a Gaussian
+
+* create a gaussian, put it in the group
+
+* using numpy and scipy
+
+* co plot the gaussian and the data
+
+* jigger the plot
+
+  + add axis labels
+
+  + add title
+
+  + line types
+
+  + text labels
+
+  + arrows
+
+  + log plot
+
+  + plotting with error bars
+
+* make a nice plotting macro
 

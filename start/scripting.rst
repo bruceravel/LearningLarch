@@ -3,14 +3,18 @@
    released under The Creative Commons Attribution-ShareAlike License
    http://creativecommons.org/licenses/by-sa/3.0/
 
-The Larch data model
+Scripts and programs
 ====================
 
+* using python in Larch
 
-* import from a file
-* groups
-* add scalar to a group
-* add an array to a group
-* naming things
-* output to a file
+* using Larch in python
+
+* larch=_larch
+
+* importing functionality
+
+* group & Group / param and Parameter / etc
+
+
 

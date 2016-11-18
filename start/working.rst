@@ -3,19 +3,16 @@
    released under The Creative Commons Attribution-ShareAlike License
    http://creativecommons.org/licenses/by-sa/3.0/
 
-Getting started with Larch
-==========================
+Working with Larch groups
+=========================
 
+* attributes and methods
 
-Contents
---------
+* implicit parameters calls
 
+* dictionary parameter calls
 
-.. toctree::
-   :maxdepth: 2
+* explicit parameter calls
 
-   data.rst
-   manipulate.rst
-   fit.rst
-   working.rst
-   scripting.rst
+* what can  you store in a group
+
