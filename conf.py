@@ -14,7 +14,7 @@
 
 import sys
 import os
-import shlex
+#import shlex
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -24,6 +24,11 @@ CURDIR = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join('sphinx', 'ext')))
 
 # -- General configuration ------------------------------------------------
+
+# from sphinxtr
+import html_mods
+import latex_mods
+
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
@@ -48,6 +53,10 @@ extensions.extend([
     'demeterdocs'
     #'sphinxcontrib.images'
 ])
+
+numfig = True
+
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

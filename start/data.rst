@@ -7,14 +7,6 @@ The Larch data model
 ====================
 
 
-* import from a file
-* groups
-* add scalar to a group
-* add an array to a group
-* naming things
-* output to a file
-
-
 Almost any analysis project using Larch begins with data.  Typically,
 these data are stored in a file of some sort and that file is stored
 either on the disk of a local computer or on a server somewhere on a
@@ -23,7 +15,7 @@ t hat data into Larch and understand how Larch stores and interacts
 with the data.
 
 As an example, we will use an X-ray emission spectroscopy (XES)
-measurement of the Bi  L\ |gamma|\ :sub:`6` emissionline measured on
+measurement of the Bi  L\ |gamma|\ :sub:`6` emission line measured on
 Bi\ :sub:`2`\ O\ :sub:`3`.
 
 Here are the first few lines of the data file:
@@ -395,3 +387,6 @@ function of |lambda|.
    :lines: 1-8
    :linenos:
 
+Any number of columns can be written to the output file |nd| simply
+add more arrays to the list of arguments to the ``write_ascii``
+function.
