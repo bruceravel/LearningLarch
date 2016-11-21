@@ -12,7 +12,7 @@
 --------------
 
 Larch is copyright |copy| 2016 Matthew Newville and the Larch
-development team |ndash| This document is copyright |copy| 2016 Bruce
+Development Team |ndash| This document is copyright |copy| 2016 Bruce
 Ravel
 
 .. :mark:`somerights,.`

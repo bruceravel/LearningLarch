@@ -22,6 +22,8 @@
 .. |beta|    unicode:: U+003B2 .. GREEK SMALL LETTER BETA
 .. |gamma|   unicode:: U+003B3 .. GREEK SMALL LETTER GAMMA
 .. |eta|     unicode:: U+003B7 .. GREEK SMALL LETTER ETA
+.. |pi|      unicode:: U+003C0 .. GREEK SMALL LETTER PI
+.. |lambda|  unicode:: U+003BB .. GREEK SMALL LETTER LAMBDA
 
 .. |AA|      unicode:: U+00C5  .. LATIN CAPITAL LETTER A WITH RING ABOVE
 .. |pm|      unicode:: U+00B1  .. PLUS-MINUS SIGN
@@ -34,3 +36,4 @@
 .. |therefore| unicode:: U+2234  .. THEREFORE
 .. |ge|      unicode:: U+2265 ..  GREATER-THAN OR EQUAL TO
 .. |dprime|  unicode:: U+2033 .. DOUBLE PRIME
+.. |hbar|    unicode:: U+0127 .. LATIN SMALL LETTER H WITH STROKE
