@@ -1,0 +1,38 @@
+def fit_lg6(p):
+    """
+    Objective function for fitting a Gaussian plus a line to a Bi Lgamma6 peak.
+    """
+    p.shape = p.amp * gaussian(p.energy, cen=p.centroid, sigma=p.width)
+    p.line  = p.slope * p.energy + p.yint
+    func = p.xes - p.shape - p.line
+    return func
+enddef
+
+## import the data
+bi2o3 = read_ascii('_static/Bi2O3_Lg6.xes')
+
+## make a group for the fitting parameters
+params          = group()
+## the variables of the fit
+params.amp      = param(2700,     vary=True)
+params.centroid = param(15685,    vary=True, min=15684.5, max=15685.5)
+params.width    = param(4.5,      vary=True)
+params.slope    = param(-0.15,    vary=True)
+params.yint     = param(780,      vary=True)
+## arrays needed for the objective function
+params.energy   = bi2o3.energy
+params.xes      = bi2o3.xes
+
+## do the fit!
+fit = minimize(fit_lg6, params, toler=1e-5) 
+fit.leastsq()
+
+## put the fitted lineshapes into the bi2o3 group
+bi2o3.shape = params.amp * gaussian(bi2o3.energy, cen=params.centroid, sigma=params.width)
+bi2o3.line  = params.slope * bi2o3.energy + params.yint
+
+## plot 'em up and show the results
+newplot(bi2o3.energy, bi2o3.xes, label='Bi$_2$O$_3$ L$\gamma_6$', show_legend=True, legend_loc='ul',
+        xlabel='Energy (eV)', ylabel='Emission intensity', title='Bi L$\gamma_6$ XES')
+plot(bi2o3.energy, bi2o3.shape+bi2o3.line, label='fitted Gaussian + line')
+show params

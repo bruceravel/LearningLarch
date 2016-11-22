@@ -41,6 +41,7 @@ to values that make a peak shape that resembles the measured data.  We
 then initiate a new plot displaying the data, then add the Gaussian to
 the plot.  Here's what they look like together:
 
+.. _fig-lg6gaussian:
 .. figure:: ../_images/Bi_lg6_gaussian.png
    :target: ../_images/Bi_lg6_gaussian.png
    :align: center
@@ -63,6 +64,7 @@ clearly identifies the traces.
      larch> newplot(bi2o3.energy, bi2o3.xes, xlabel='Emission energy (eV)', ylabel='Emission intensity')
      larch> plot(bi2o3.energy, bi2o3.gaussian)
 
+  .. _fig-axislabels:
   .. figure:: ../_images/axis_labels.png
      :target: ../_images/axis_labels.png
      :align: center
@@ -79,6 +81,7 @@ clearly identifies the traces.
      larch> newplot(bi2o3.energy, bi2o3.xes, label='Bi$_2$O$_3$ L$\gamma_6$', show_legend=True, legend_loc='ul')
      larch> plot(bi2o3.energy, bi2o3.gaussian, label='Gaussian line shape')
 
+  .. _fig-legend:
   .. figure:: ../_images/legend.png
      :target: ../_images/legend.png
      :align: center
@@ -106,6 +109,7 @@ clearly identifies the traces.
      larch> newplot(bi2o3.energy, bi2o3.xes, title='Bi L$\gamma_6$ XES')
      larch> plot(bi2o3.energy, bi2o3.gaussian)
 
+  .. _fig-title:
   .. figure:: ../_images/title.png
      :target: ../_images/title.png
      :align: center
@@ -151,6 +155,7 @@ simply by
 
 resulting in this figure:
 
+.. _fig-simplemacro:
 .. figure:: ../_images/simplemacro.png
    :target: ../_images/simplemacro.png
    :align: center
@@ -164,7 +169,8 @@ parameters of the Gaussian function are hard-wired into the text of
 the macro.  It would be nice to be able to explore different values of
 the Gaussian parameters.
 
-Here is an improvement on the macro using some named parameters:
+Here is an improvement on the macro using some named parameters and a
+bit of indentation:
 
   .. code-block:: bash
 
@@ -178,7 +184,6 @@ Here is an improvement on the macro using some named parameters:
      .....> enddef
 
 
-Blah blah blah
 
 .. subfigstart::
 
@@ -206,4 +211,33 @@ Blah blah blah
 .. subfigend::
    :width: 0.3
    :label: _fig-macro_results
+
+
+An even `better` approach would be to save the text of the macro to a
+text file.  That is, put this:
+
+.. code-block:: python
+
+   def lg6plot(amp=2700, centroid=15685, width=4.5):
+     bi2o3 = read_ascii('_static/Bi2O3_Lg6.xes')
+     bi2o3.gaussian = amp * gaussian(bi2o3.energy, cen=centroid, sigma=width)
+     show bi2o3
+     newplot(bi2o3.energy, bi2o3.xes, label='Bi$_2$O$_3$ L$\gamma_6$', show_legend=True, legend_loc='ul',
+             xlabel='Energy (eV)', ylabel='Emission intensity', title='Bi L$\gamma_6$ XES')
+     plot(bi2o3.energy, bi2o3.gaussian, label='Gaussian line shape')
+   enddef
+
+into a text file.  If that is called :file:`lg6plot_macro.lar`, then
+you can import it by doing
+
+.. code-block:: bash
+
+   larch> run 'lg6plot_macro.lar'
+
+then execute the macro, for instance:
+
+.. code-block:: bash
+
+   larch> lg6plot(centroid=15680)
+
 

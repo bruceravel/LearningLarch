@@ -45,6 +45,7 @@ relevant to the current discussion.
 Here is what the ``energy`` and ``xes`` columns look like when
 plotted.
 
+.. _fig-bilg6:
 .. figure:: ../_images/Bi_lg6.png
    :target: ../_images/Bi_lg6.png
    :align: center
