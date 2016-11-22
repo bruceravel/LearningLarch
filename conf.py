@@ -23,6 +23,14 @@ import os
 CURDIR = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join('sphinx', 'ext')))
 
+#import mdn_theme
+#html_theme_path = [mdn_theme.get_theme_dir()]
+#html_theme = 'mdn'
+import hbp_sphinx_theme
+html_theme = "hbp_sphinx_theme"
+html_theme_path = [hbp_sphinx_theme.get_html_theme_path()]
+
+
 # -- General configuration ------------------------------------------------
 
 # from sphinxtr
@@ -124,7 +132,7 @@ rst_prolog = open(os.path.join(CURDIR, 'prolog.rst'),'r').read().decode('utf8')
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'perldoc'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -140,7 +148,7 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'nature'
+#html_theme = 'nature'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -152,7 +160,7 @@ html_theme = 'nature'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = '%s v%s' % (project, release)
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -254,7 +262,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'LearningLarch.tex', u'Learning Larch Documentation',
+  (master_doc, 'LearningLarch.tex', u'Learning Larch',
    u'Bruce Ravel', 'manual'),
 ]
 
@@ -284,7 +292,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'learninglarch', u'Learning Larch Documentation',
+    (master_doc, 'learninglarch', u'Learning Larch',
      [author], 1)
 ]
 
@@ -298,7 +306,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'LearningLarch', u'Learning Larch Documentation',
+  (master_doc, 'LearningLarch', u'Learning Larch',
    author, 'LearningLarch', 'One line description of project.',
    'Miscellaneous'),
 ]

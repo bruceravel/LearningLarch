@@ -307,7 +307,7 @@ in the plot of the fitted function at line 37.
    params          = group()
    ## the variables of the fit
    params.amp      = param(2700,     vary=True)
-   params.centroid = param(15685,    vary=True, min=15684.5, max=15685.5)
+   params.centroid = param(15685,    vary=True, min=15684.7, max=15685.3)
    params.width    = param(4.5,      vary=True)
    params.slope    = param(-0.15,    vary=True)
    params.yint     = param(780,      vary=True)
@@ -355,7 +355,7 @@ reasonably small.
 
    == Group 0xaa399b8cL: 0 methods, 19 attributes ==
      amp: param(name='amp', value=2202.69351 +/- 30.54872, vary=True)
-     centroid: param(name='centroid', value=15684.86801 +/- 0.04953, vary=True, min=15684.5, max=15685.5)
+     centroid: param(name='centroid', value=15684.86801 +/- 0.04953, vary=True, min=15684.7, max=15685.3)
      chi_reduced: 52.681267839202768
      chi_square: 5215.4455160810739
      covar: array<shape=(5, 5), type=dtype('float64')>
@@ -406,7 +406,7 @@ require altering the parameters of the fit.
    params          = group()
    ## the variables of the fit
    params.amp      = param(2700,     vary=True)
-   params.centroid = param(15685,    vary=True, min=15684.5, max=15685.5)
+   params.centroid = param(15685,    vary=True, min=15684.7, max=15685.3)
    params.width    = param(4.5,      vary=True)
    params.slope    = param(-0.15,    vary=True)
    params.yint     = param(780,      vary=True)
@@ -451,7 +451,7 @@ fitting model.
 
    == Group 0xaa34a0ecL: 0 methods, 19 attributes ==
      amp: param(name='amp', value=3427.50483 +/- 25.61189, vary=True)
-     centroid: param(name='centroid', value=15684.86337 +/- 0.01868, vary=True, min=15684.5, max=15685.5)
+     centroid: param(name='centroid', value=15684.86337 +/- 0.01868, vary=True, min=15684.7, max=15685.3)
      chi_reduced: 7.9706451812795605
      chi_square: 789.09387294667647
      covar: array<shape=(5, 5), type=dtype('float64')>
@@ -509,7 +509,7 @@ same as the previous 2 attempts.
    params          = group()
    ## the variables of the fit
    params.amp      = param(2700,     vary=True)
-   params.centroid = param(15685,    vary=True, min=15684.5, max=15685.5)
+   params.centroid = param(15685,    vary=True, min=15684.7, max=15685.3)
    params.width    = param(4.5,      vary=True)
    params.frac     = param(0.5,      vary=True)
    params.slope    = param(-0.15,    vary=True)
@@ -560,7 +560,7 @@ reduced |chi|\ :sup:`2`.
 
    == Group 0xaa353aecL: 0 methods, 20 attributes ==
      amp: param(name='amp', value=3121.37987 +/- 34.50994, vary=True)
-     centroid: param(name='centroid', value=15684.86351 +/- 0.01396, vary=True, min=15684.5, max=15685.5)
+     centroid: param(name='centroid', value=15684.86351 +/- 0.01396, vary=True, min=15684.7, max=15685.3)
      chi_reduced: 4.3816562727142312
      chi_square: 429.4023147259947
      covar: array<shape=(6, 6), type=dtype('float64')>
@@ -578,8 +578,7 @@ reduced |chi|\ :sup:`2`.
      slope: param(name='slope', value=0.05345 +/- 0.01412, vary=True)
      width: param(name='width', value=4.14973 +/- 0.02464, vary=True)
      xes: array<shape=(104,), type=dtype('float64')>
-     yint: param(name='yint', value=-831.73689 +/- 221.38340,
-     vary=True)
+     yint: param(name='yint', value=-831.73689 +/- 221.38340, vary=True)
 
 
 That's pretty much the end of the line for fitting our Bi L\ |gamma|\
