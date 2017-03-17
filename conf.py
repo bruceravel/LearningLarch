@@ -26,10 +26,10 @@ sys.path.insert(0, os.path.abspath(os.path.join('sphinx', 'ext')))
 #import mdn_theme
 #html_theme_path = [mdn_theme.get_theme_dir()]
 #html_theme = 'mdn'
-import hbp_sphinx_theme
-html_theme = "hbp_sphinx_theme"
-html_theme_path = [hbp_sphinx_theme.get_html_theme_path()]
-
+#import hbp_sphinx_theme
+#html_theme = "hbp_sphinx_theme"
+#html_theme_path = [hbp_sphinx_theme.get_html_theme_path()]
+html_theme = "pyramid"
 
 # -- General configuration ------------------------------------------------
 

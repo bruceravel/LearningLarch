@@ -70,7 +70,7 @@ Let's break this down.
 
    The way I have set up this objective function is to be a function
    of a single input parameter.  This input parameter, ``p``, is
-   expected to be a group the attributes of which conatin both the
+   expected to be a group the attributes of which contain both the
    variables of the fit and any arrays that are needed to evaluate the
    fit.
 
@@ -168,7 +168,7 @@ high energy side and the error bars on the parameters are enormous.
 There are at least three areas in which this fitting model can be
 improved:
 
-#. Apply a restraint to the value of ``amp``.  Instability with
+#. Apply a restraint to the value of ``centroid``.  Instability with
    respect to this parameter is the likely cause of the large
    uncertainties.
 
@@ -179,8 +179,8 @@ improved:
 
 
 
-Apply a restraint to ``amp``
-----------------------------
+Apply a restraint to ``centroid``
+---------------------------------
 
 It is abundantly clear from simply examining the plot of the Bi L\
 |gamma|\ :sub:`6` emission line that the centroid should be a bit

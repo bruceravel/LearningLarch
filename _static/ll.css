@@ -38,3 +38,8 @@ div.caution {
     border: 1px solid #c00;
 }
 
+div.sphinxsidebarwrapper {
+    float:left;
+    position:fixed;
+    width:230px;
+}

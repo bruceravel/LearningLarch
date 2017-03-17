@@ -142,7 +142,9 @@ created using the ``def`` command:
      larch> def lg6plot ():
      .....> bi2o3 = read_ascii('_static/Bi2O3_Lg6.xes')
      .....> bi2o3.gaussian = 2700 * gaussian(bi2o3.energy, cen=15685, sigma=4.5)
-     .....> newplot(bi2o3.energy, bi2o3.xes, label='Bi$_2$O$_3$ L$\gamma_6$', show_legend=True, legend_loc='ul', xlabel='Energy (eV)', ylabel='Emission intensity', title='Bi L$\gamma_6$ XES')
+     .....> newplot(bi2o3.energy, bi2o3.xes, label='Bi$_2$O$_3$ L$\gamma_6$', show_legend=True, 
+     .....>         legend_loc='ul', xlabel='Energy (eV)', ylabel='Emission intensity',
+     .....>         title='Bi L$\gamma_6$ XES')
      .....> plot(bi2o3.energy, bi2o3.gaussian, label='Gaussian line shape')
      .....> enddef
 

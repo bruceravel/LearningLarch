@@ -11,7 +11,7 @@ Almost any analysis project using Larch begins with data.  Typically,
 these data are stored in a file of some sort and that file is stored
 either on the disk of a local computer or on a server somewhere on a
 local network or in the internet.  In any case, we must somehow import
-t hat data into Larch and understand how Larch stores and interacts
+that data into Larch and understand how Larch stores and interacts
 with the data.
 
 As an example, we will use an X-ray emission spectroscopy (XES)
@@ -21,12 +21,13 @@ Bi\ :sub:`2`\ O\ :sub:`3`.
 Here are the first few lines of the data file:
 
 .. literalinclude:: ../_static/Bi2O3_Lg6.xes
-   :lines: 1-35
+   :lines: 1-34
    :linenos:
 
-This listing has been truncated at 35 lines.  There are, in fact, 103
-data points measured from 15658 eV to 15709.5 eV on an even grid with
-a 0.5 eV grid spacing.
+This listing has been truncated at 34 lines, including the first six
+lines of the data table.  There are, in fact, 103 data points measured
+from 15658 eV to 15709.5 eV on an even grid with a 0.5 eV grid
+spacing.
 
 The first 29 lines are header information containing metadata about
 the measurement.  Larch is able to recognize and store this metadata.
@@ -59,8 +60,8 @@ Importing column data
 ---------------------
 
 The starting point for this (or any!) data analysis in Larch is
-importing the data from the file on disk into Larch.  This is done
-with Larch's `read_ascii
+importing the data from the file on disk into Larch.  For column data,
+like that shown above, this is done with Larch's `read_ascii
 <http://xraypy.github.io/xraylarch/data/index.html#_io.read_ascii>`_
 function.  In this case, these XES data are stored in a file called
 :file:`Bi2O3_Lg6.xes` and stored in a folder called :file:`Data`.
@@ -101,15 +102,16 @@ command.
       data: array<shape=(9, 104), type=dtype('float64')>
       energy: array<shape=(104,), type=dtype('float64')>
       filename: '_static/Bi2O3_Lg6.xes'
-      header: ['# XDI/1.0 PILATUS/100K BLA/4', '# Beamline.collimation: none', ... '# -------------------------', '#  energy      xes      npixels    1          2          3          4          5          6']
+      header: ['# XDI/1.0 PILATUS/100K BLA/4', '# Beamline.collimation: none', ... ]
       npixels: array<shape=(104,), type=dtype('float64')>
       xes: array<shape=(104,), type=dtype('float64')>
 
-This tells us that :quoted:`bi2o3` is a collection things.  Groups are
-Larch's fundamental way of organizing things.  Virtually everything of
-interest in Larch is a Group or a member of a Group.  These Groups are
-grab bags of indeterminate size.  That is, they can contain any number
-of items and each item can be almost anything, including other Groups.
+This tells us that :quoted:`bi2o3` is a collection of things.  Groups
+are Larch's fundamental way of organizing data and metadata.
+Virtually everything of interest in Larch is a Group or a member of a
+Group.  These Groups are grab bags of indeterminate size.  That is,
+they can contain any number of items and each item can be almost
+anything, including other Groups.
 
 In this case, the `read_ascii
 <http://xraypy.github.io/xraylarch/data/index.html#_io.read_ascii>`_
@@ -208,9 +210,10 @@ This is a critical feature of Larch.  Larch provides seamless access
 to the entire `Numerical Python (aka numpy)
 <https://docs.scipy.org/doc/numpy/index.html>`_ library.  That is,
 anything that can be done numpy can also be done with Larch.
-Similarly, Larch provides access to `Scientific Python (aka scypy)
-<http://scipy.org/scipylib/index.html>`_ and `the Matplotlib plotting
-library <http://matplotlib.org/>`_
+Similarly, Larch provides access to `Scientific Python (aka scipy)
+<http://scipy.org/scipylib/index.html>`_, `the Matplotlib plotting
+library <http://matplotlib.org/>`_, and a bunch of other cool Python
+libraries.
 
 
 Modifying the data Group
@@ -241,7 +244,7 @@ This is information that can be stored in the Group:
      data: array<shape=(9, 104), type=dtype('float64')>
      energy: array<shape=(104,), type=dtype('float64')>
      filename: '_static/Bi2O3_Lg6.xes'
-     header: ['# XDI/1.0 PILATUS/100K BLA/4', '# Beamline.collimation: none', ... '# -------------------------', '#  energy      xes      npixels    1          2          3          4          5          6']
+     header: ['# XDI/1.0 PILATUS/100K BLA/4', '# Beamline.collimation: none', ...]
      npixels: array<shape=(104,), type=dtype('float64')>
      peakpos: 15685
      xes: array<shape=(104,), type=dtype('float64')>
@@ -269,7 +272,7 @@ In units of eV\ |cdot|\ |AA|\ ngstroms, |hbar|\ c = 1973.27053324.
      data: array<shape=(9, 104), type=dtype('float64')>
      energy: array<shape=(104,), type=dtype('float64')>
      filename: '_static/Bi2O3_Lg6.xes'
-     header: ['# XDI/1.0 PILATUS/100K BLA/4', '# Beamline.collimation: none', ... '# -------------------------', '#  energy      xes      npixels    1          2          3          4          5          6']
+     header: ['# XDI/1.0 PILATUS/100K BLA/4', '# Beamline.collimation: none', ... ]
      npixels: array<shape=(104,), type=dtype('float64')>
      peakpos: 15685
      wavelength: array<shape=(104,), type=dtype('float64')>
@@ -312,8 +315,8 @@ will implicitly iterate over all the elements of the energy array.
 This efficient, vectorized notation is a powerful thing that Larch
 inherits from numpy.
 
-The names of Groups members
----------------------------
+The names of Group members
+--------------------------
 
 Although Larch's concept of a Group offers a lot of freedom, it is not
 without constraints.  Most importantly, there are some hard and soft
@@ -368,7 +371,7 @@ Happily, Larch is pretty well documented.
 Writing data to a file
 ----------------------
 
-After doing some work on data, you might wish to write you results to
+After doing some work on data, you might wish to write your results to
 a new file.  This might be a file you share with a colleague, import
 into Excel, or use in some other way.  Here is how that is done:
 
@@ -391,3 +394,7 @@ function of |lambda|.
 Any number of columns can be written to the output file |nd| simply
 add more arrays to the list of arguments to the ``write_ascii``
 function.
+
+
+.. todo:: Input from and output to structured files.  Other file types
+          besides ASCII.
